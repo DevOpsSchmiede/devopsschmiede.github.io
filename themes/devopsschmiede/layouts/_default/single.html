@@ -1,0 +1,27 @@
+{{ define "main" }}
+<div class="container mx-auto max-w-screen-md" id="content">
+  <h1 class="text-center text-3xl mb-12">
+    <span><a href="{{ .Permalink }}">{{ .Title }}</a></span>
+  </h1>
+  <div class="flex space-x-8 justify-center mb-8">
+    <p>
+      <i class="far fa-clock text-sm"></i> {{ .ReadingTime }} minute{{ if gt
+      .ReadingTime 1 }}s{{ end }} to read
+    </p>
+    <p>
+        {{ .Params.Category }}
+    </p>
+    <ul class="tags">
+      {{- range .Params.Tags -}}
+      <li><a href="{{ "tags/" | relURL }}{{ . | urlize }}">{{ . }}</a></li>
+      {{- end -}}
+    </ul>
+  </div>
+  <p class="mb-12">
+    <img src="{{ .Permalink }}{{ .Resources.GetMatch "images/banner*" }}" />
+  </p>
+  <div id="single">
+    {{ .Content }}
+  </div>
+</div>
+{{ end }}

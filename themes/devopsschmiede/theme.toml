@@ -1,0 +1,13 @@
+name = "DevOps Schmiede"
+license = "MIT"
+licenselink = "https://github.com/DevOpsSchmiede/devops-schmiede.de/blob/master/themes/devopsschmiede/LICENSE"
+description = ""
+homepage = "https://devops-schmiede.de/"
+tags = []
+features = []
+min_version = "0.101.0"
+
+[author]
+  name = "DevOps Schmiede"
+  homepage = "https://devops-schmiede.de"
+
