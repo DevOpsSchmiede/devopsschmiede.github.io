@@ -1,0 +1,9 @@
+{{ define "main" }}
+<div class="container">
+  {{ partial "title.html" (dict "content" "Team")}}
+  <div class="flex flex-col lg:flex-row">
+    {{ range .Pages }} {{ partial "article/author.html" (dict "context" . "name"
+    .Params.name)}}{{ end }}
+  </div>
+</div>
+{{ end }}

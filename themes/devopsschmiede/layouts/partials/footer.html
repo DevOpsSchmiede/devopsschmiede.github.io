@@ -127,8 +127,10 @@
           <li><a href="#">Privacy</a></li>
           <li><a href="#">Legal</a></li>
         </ul>
-        <div>
-          <p class="pb-2">&#169; {{ now.Format "2006" }} {{ .Site.Title }}</p>
+        <div class="mt-8 md:mt-0">
+          <p class="pb-2 text-center">
+            &#169; {{ now.Format "2006" }} {{ .Site.Title }}
+          </p>
           {{ partial "social.html" (dict "color" "black") }}
         </div>
       </div>

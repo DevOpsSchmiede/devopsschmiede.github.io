@@ -1,0 +1,5 @@
+<ul class="flex flex-row gap-4 justify-center mb-12">
+  {{ range . }}
+  <li><a href="{{ "tags/" | relURL }}{{ . | urlize }}" class="px-3 py-0.5 bg-dos-pink rounded-lg text-dos-white">{{ . }}</a></li>
+  {{ end }}
+</ul>
