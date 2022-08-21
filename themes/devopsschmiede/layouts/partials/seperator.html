@@ -1,0 +1,33 @@
+<div class="bg-dos-white py-6 text-dos-black mb-24">
+  <div class="container flex flex-row justify-between md:gap-0">
+    <div class="w-[45%] my-auto">
+      <div class="w-3/4 mx-auto">
+        <span class="text-dos-grey absolute z-0 mt-1 ml-2"
+          ><svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="icon icon-tabler icon-tabler-search"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <circle cx="10" cy="10" r="7"></circle>
+            <line x1="21" y1="21" x2="15" y2="15"></line></svg
+        ></span>
+        <input
+          type="search"
+          placeholder="search for something"
+          class="py-1 pl-10 pr-2 relative z-10 w-full bg-transparent border-b-2 border-dos-pink focus:outline-none placeholder:text-dos-grey"
+        />
+      </div>
+    </div>
+    <div class="text-2xl w-[45%]">
+      <p class="mb-2 text-center">Feel free to <a href="#">contact</a> us</p>
+      {{ partial "social.html" (dict "color" "black") }}
+    </div>
+  </div>
+</div>

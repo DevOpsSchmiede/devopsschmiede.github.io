@@ -1,0 +1,22 @@
+{{ define "main" }}
+<div id="latest-article" class="container mb-12">
+  {{ range first 1 (where .Site.RegularPages "Type" "posts") }}
+  <h1 class="title"><a href="{{ .Permalink }}">{{ .Title }}</a></h1>
+  <p
+    class="glass p-8 mb-8 rounded-lg shadow-xl lg:mr-16 lg:ml-12 lg:-mt-10 lg:-rotate-6 lg:float-right lg:w-3/6"
+  >
+    <img src="{{ .Permalink }}{{ .Resources.GetMatch "images/banner*" }}"
+    class="rounded-lg shadow-xl w-full" />
+  </p>
+  <p class="mb-8 text-justify">{{ .Summary }}</p>
+  {{ partial "article/badges.html" (dict "context" .) }} {{ end }}
+</div>
+{{ partial "seperator.html" }}
+<div class="container">
+  <div class="article-list">
+    {{ $lastPosts := sub (len (where .Site.RegularPages "Type" "posts")) 1 }} {{
+    if gt $lastPosts 0 }} {{ range last $lastPosts (where .Site.RegularPages
+    "Type" "posts") }} {{ partial "article/small.html" . }} {{ end }} {{ end }}
+  </div>
+</div>
+{{ end }}

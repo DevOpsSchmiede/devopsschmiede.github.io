@@ -1,5 +1,5 @@
 <footer
-  class="mt-auto mb-[1px] before:block before:absolute before:z-0 before:bottom-0 before:left-0 before:right-0 before:h-96"
+  class="mt-auto mb-[1px] relative before:block before:absolute before:z-0 before:bottom-0 before:left-0 before:right-0 before:h-96"
 >
   <div class="relative z-10 py-8 bg-dos-white text-center md:text-left">
     <div class="container flex flex-col gap-12 md:flex-row">
@@ -129,7 +129,7 @@
         </ul>
         <div>
           <p class="pb-2">&#169; {{ now.Format "2006" }} {{ .Site.Title }}</p>
-          {{ partial "social.html" }}
+          {{ partial "social.html" (dict "color" "black") }}
         </div>
       </div>
     </div>

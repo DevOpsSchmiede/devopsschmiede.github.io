@@ -8,7 +8,8 @@ module.exports = {
         "dos-pink": "#f72585",
         "dos-blue": "#4cc9f0",
         "dos-white": "#fafafa",
-        "dos-black": "#333",
+        "dos-grey": "#c0c0c0",
+        "dos-black": "#333333",
         "dos-background": "#34404e"
       },
       fontFamily: {

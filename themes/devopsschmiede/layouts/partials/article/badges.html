@@ -1,0 +1,4 @@
+<ul class="badges text-dos-white{{ if isset . "center" }} justify-center{{ end }}">
+  <li>{{ .context.Params.author }}</li>
+  <li>{{ time.Format "2006-01-02" .context.Date }}</li>
+</ul>

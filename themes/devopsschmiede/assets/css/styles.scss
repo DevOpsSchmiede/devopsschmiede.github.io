@@ -12,12 +12,24 @@ svg {
   @apply inline-block align-top;
 }
 
-main::before {
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0.5) 0%,
-    rgba(0, 0, 0, 0) 100%
-  );
+p {
+  @apply leading-7 text-justify;
+}
+
+main {
+  @apply text-dos-white;
+
+  &::before {
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.5) 0%,
+      rgba(0, 0, 0, 0) 100%
+    );
+  }
+
+  a {
+    @apply text-dos-pink;
+  }
 }
 
 footer::before {
@@ -29,18 +41,20 @@ footer::before {
 }
 
 nav {
+  @apply text-dos-black;
+
   ul {
     @apply md:w-1/3 md:flex flex-row;
   }
 
   li {
     a {
-      @apply h-12 px-4 relative block before:absolute before:h-1 before:bg-dos-pink before:left-0 before:bottom-0 before:w-0 before:transition-all before:duration-700;
+      @apply text-dos-black h-12 px-4 relative block before:absolute before:h-1 before:bg-dos-pink before:left-0 before:bottom-0 before:w-0 before:transition-all before:duration-700;
 
       line-height: 3rem;
 
       &.active {
-        @apply border-b-4 border-dos-pink before:hidden;
+        @apply before:w-full;
       }
 
       &:hover {
@@ -82,4 +96,41 @@ footer ul {
       @apply before:w-full;
     }
   }
+}
+
+.glass {
+  @apply backdrop-blur;
+
+  background-color: rgba(250, 250, 250, 0.2);
+  border: 1px solid rgba(250, 250, 250, 0.4);
+}
+
+#latest-article {
+  min-height: 28rem;
+}
+
+.title a {
+  @apply text-dos-black mb-8 whitespace-nowrap text-4xl h-16 pr-3 bg-dos-white inline-block font-bold relative border-b-4 border-dos-blue before:bg-dos-white before:h-16 before:absolute before:border-b-4 before:border-dos-blue before:w-full before:right-full;
+
+  line-height: 4rem;
+}
+
+.badges {
+  @apply flex flex-row font-bold;
+
+  li {
+    @apply px-3 py-0.5;
+
+    &:nth-child(1) {
+      @apply bg-dos-black;
+    }
+
+    &:nth-child(2) {
+      @apply bg-dos-pink;
+    }
+  }
+}
+
+.article-list {
+  @apply flex flex-wrap flex-col;
 }
