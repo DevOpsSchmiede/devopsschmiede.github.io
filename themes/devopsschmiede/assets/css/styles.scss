@@ -132,5 +132,12 @@ footer ul {
 }
 
 .article-list {
-  @apply flex flex-wrap flex-col;
+  @apply columns-2 gap-12;
+
+  .small-article {
+    &:nth-child(3) > div,
+    &:nth-child(4) > div {
+      @apply ml-auto;
+    }
+  }
 }

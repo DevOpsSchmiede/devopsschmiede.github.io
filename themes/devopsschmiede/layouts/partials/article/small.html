@@ -1,17 +1,19 @@
-<div class="small-article shadow-xl flex-start lg:w-[45%]">
-  <div class="rounded-t-lg p-8 glass">
-    <p class="mb-8">
-      <img src="{{ .Permalink }}{{ .Resources.GetMatch "images/banner*" }}"
-      class="rounded-lg shadow-xl" />
-    </p>
-    <h1 class="text-center text-2xl font-bold mb-4 drop-shadow-lg">
-      <a href="#" class="border-b-4 border-dos-blue text-dos-white"
-        >{{ .Title }}</a
-      >
-    </h1>
-  </div>
-  <div class="bg-dos-white text-dos-black p-8 rounded-b-lg">
-    <p class="mb-8">{{ .Summary }}</p>
-    {{ partial "article/badges.html" (dict "context" . "center" "true") }}
+<div class="inline-block">
+  <div class="small-article shadow-xl mb-12">
+    <div class="rounded-t-lg p-8 glass">
+      <p class="mb-8">
+        <img src="{{ .Permalink }}{{ .Resources.GetMatch "images/banner*" }}"
+        class="rounded-lg shadow-xl" />
+      </p>
+      <h1 class="text-center text-2xl font-bold mb-4 drop-shadow-lg">
+        <a href="#" class="border-b-4 border-dos-blue text-dos-white"
+          >{{ .Title }}</a
+        >
+      </h1>
+    </div>
+    <div class="bg-dos-white text-dos-black p-8 rounded-b-lg">
+      <p class="mb-8">{{ .Summary }}</p>
+      {{ partial "article/badges.html" (dict "context" . "center" "true") }}
+    </div>
   </div>
 </div>

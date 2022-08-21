@@ -1,5 +1,5 @@
 ---
-title: "Another greate article"
+title: "Another great article"
 date: "2022-08-05 20:34:48 +0200"
 draft: true
 author: Fabian
