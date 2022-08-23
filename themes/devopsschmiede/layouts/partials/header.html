@@ -2,14 +2,14 @@
   <div class="container">
     <div class="flex flex-col md:flex-row">
       <ul>
-        <li><a href="{{ .Site.BaseURL }}" class="active">Home</a></li>
-        <li><a href="{{ .Site.BaseURL }}categories">Categories</a></li>
-        <li><a href="#">About</a></li>
+        <li><a href="{{ "/" | relLangURL }}"{{ if or (eq .RelPermalink "/") (eq .RelPermalink "/en/") (eq .RelPermalink "/de/") (in .RelPermalink "/posts") }} class="active"{{ end }}>{{ i18n "home" }}</a></li>
+        <li><a href="{{ "/categories/" | relLangURL }}"{{ if in .RelPermalink "/categories" }} class="active"{{ end }}>{{ i18n "categories" }}</a></li>
+        <li><a href="{{ "/about/" | relLangURL }}"{{ if in .RelPermalink "/about" }} class="active"{{ end }}>{{ i18n "about" }}</a></li>
       </ul>
       <p id="logo" class="relative mx-auto order-first md:order-2">
         <a
           class="px-8 lg:px-12 h-16 relative z-10 bg-dos-white rounded-b-lg flex"
-          href="{{ .Site.BaseURL }}"
+          href="{{ "/" | relLangURL }}"
           ><span class="m-auto block"
             ><svg
               width="93px"
@@ -123,8 +123,8 @@
         ></a>
       </p>
       <ul class="md:justify-end order-3">
-        <li><a href="{{ .Site.BaseURL }}team">Team</a></li>
-        <li><a href="#">Imprint</a></li>
+        <li><a href="{{ "/team/" | relLangURL }}"{{ if in .RelPermalink "/team" }} class="active"{{ end }}>{{ i18n "team" }}</a></li>
+        <li><a href="{{ "/imprint/" | relLangURL }}"{{ if in .RelPermalink "/imprint" }} class="active"{{ end }}>{{ i18n "imprint" }}</a></li>
       </ul>
     </div>
   </div>

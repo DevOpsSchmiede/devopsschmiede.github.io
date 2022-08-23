@@ -4,7 +4,7 @@ date: "2022-08-05 20:34:48 +0200"
 draft: true
 author: Fabian
 foo: bar
-category: something
+categories: something
 tags:
   - foo
   - o

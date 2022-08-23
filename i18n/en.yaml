@@ -1,0 +1,15 @@
+---
+- id: home
+  translation: "Home"
+- id: categories
+  translation: "Categories"
+- id: about
+  translation: "About"
+- id: team
+  translation: "Team"
+- id: imprint
+  translation: "Imprint"
+- id: privacy
+  translation: "Privacy"
+- id: legal
+  translation: "Legal"

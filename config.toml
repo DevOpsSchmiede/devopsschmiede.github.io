@@ -13,7 +13,7 @@ weight = 1
 [languages.de]
 contentDir = "content/de"
 languageName = "Deutsch"
-weight = 1
+weight = 2
 
 [taxanomies]
 tag = "tags"
@@ -26,6 +26,6 @@ lineanchors = "L"
 style = "dracula"
 
 [module]
-[[module.mounts]]
+[module.mounts]
 source = "./node_modules/@fontsource/saira/files"
 target = "static/css/files"

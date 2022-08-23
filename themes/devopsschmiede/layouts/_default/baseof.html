@@ -11,7 +11,7 @@
     <base href="{{ .Site.BaseURL }}" />
     */}}
     <title>
-      {{ if not .IsHome }}{{ .Page.Title }} {{ end }}{{ .Site.Title }}
+      {{ if not .IsHome }}{{ .Page.Title }} - {{ end }}{{ .Site.Title }}
     </title>
     {{ partialCached "css.html" . }}
   </head>

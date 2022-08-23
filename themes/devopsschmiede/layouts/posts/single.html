@@ -6,7 +6,7 @@
     class="rounded-lg shadow-xl" />
   </figure>
   {{ partial "article/tags.html" .Params.Tags }}
-  <div class="article-content mb-12">{{ .Content }}</div>
+  <div class="content mb-12">{{ .Content }}</div>
   {{ partial "article/author.html" (dict "context" . "name" .Params.author
   "direction" "horizontal") }}
 </div>
