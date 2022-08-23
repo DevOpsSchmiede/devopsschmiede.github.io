@@ -32,14 +32,6 @@ main {
   }
 }
 
-footer::before {
-  background: linear-gradient(
-    0deg,
-    rgba(0, 0, 0, 0.5) 0%,
-    rgba(0, 0, 0, 0) 100%
-  );
-}
-
 nav {
   @apply text-dos-black;
 
@@ -86,20 +78,8 @@ nav {
   @apply px-2 w-full lg:max-w-6xl mx-auto;
 }
 
-footer ul {
-  @apply flex flex-col gap-1;
-
-  a {
-    @apply relative before:absolute before:h-0.5 before:bg-dos-pink before:left-0 before:bottom-0 before:w-0 before:transition-all before:duration-700;
-
-    &:hover {
-      @apply before:w-full;
-    }
-  }
-}
-
 .glass {
-  @apply backdrop-blur p-8;
+  @apply backdrop-blur;
 
   background-color: rgba(250, 250, 250, 0.2);
   border: 1px solid rgba(250, 250, 250, 0.4);
@@ -137,5 +117,27 @@ footer ul {
 
   p {
     @apply text-justify mb-8;
+  }
+}
+
+footer {
+  &::before {
+    background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.5) 0%,
+      rgba(0, 0, 0, 0) 100%
+    );
+  }
+
+  ul {
+    @apply flex flex-col gap-1;
+
+    a {
+      @apply relative before:absolute before:h-0.5 before:bg-dos-pink before:left-0 before:bottom-0 before:w-0 before:transition-all before:duration-700;
+
+      &:hover {
+        @apply before:w-full;
+      }
+    }
   }
 }

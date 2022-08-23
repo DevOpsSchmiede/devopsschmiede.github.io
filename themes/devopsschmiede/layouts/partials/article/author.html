@@ -1,23 +1,110 @@
-{{ with .context.Site.GetPage (printf "/team/%s" (lower .name)) }}
-<div class="shadow-lg mt-24 flex flex-col lg:flex-row lg:mx-16">
-  <div class="glass rounded-t-lg text-center lg:rounded-none lg:rounded-l-lg">
-    <figure class="mb-8 lg:w-80">
-      <img src="{{ .Permalink }}{{ .Resources.GetMatch "picture*" }}"
-      alt="Author picture of {{ .Params.name }}" class="rounded-full
-      w-[9.375rem] mx-auto shadow-lg" />
-    </figure>
-    <h1
-      class="text-center text-2xl font-bold mb-6 drop-shadow-lg inline-block border-b-4 border-dos-blue"
-    >
-      {{ .Params.name }} "{{ .Params.nickname }}"
-    </h1>
-    <ul class="flex flex-row justify-center gap-1">
-      {{ if isset .Params.socials "twitter" }}
-      <li>
-        <a href="{{ .Params.socials.twitter }}" class="text-dos-white"
-          ><svg
+{{ $direction := .direction }} {{ with .context.Site.GetPage (printf "/team/%s"
+(lower .name)) }}
+<div class="{{ if eq $direction "vertical" }}w-1/2{{ end }}">
+  <div class="shadow-lg flex flex-col{{ if eq $direction "horizontal"}} mt-24 lg:flex-row lg:mx-16{{ end }}">
+    <div class="glass p-8 rounded-t-lg text-center{{ if eq $direction "horizontal" }} lg:rounded-none lg:rounded-l-lg{{ end }}">
+      {{ $picture := .Resources.GetMatch "picture*" }}
+      {{ if $picture }}
+      <figure class="mb-8{{ if eq $direction "horizontal" }} lg:w-80{{ end }}">
+        <img src="{{ .Permalink }}{{ $picture }}"
+        alt="Author picture of {{ .Params.name }}" class="rounded-full
+        w-[9.375rem] mx-auto shadow-lg" />
+      </figure>
+      {{ end }}
+      <h1
+        class="text-center text-2xl font-bold mb-6 drop-shadow-lg inline-block border-b-4 border-dos-blue"
+      >
+        {{ .Params.name }} "{{ .Params.nickname }}"
+      </h1>
+      <ul class="flex flex-row justify-center gap-1">
+        {{ if isset .Params.socials "twitter" }}
+        <li>
+          <a href="{{ .Params.socials.twitter }}" class="text-dos-white"
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="icon icon-tabler icon-tabler-brand-twitter"
+              width="28"
+              height="28"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path
+                d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z"
+              ></path></svg
+          ></a>
+        </li>
+        {{ end }} {{ if isset .Params.socials "mastodon" }}
+        <li>
+          <a href="{{ .Params.socials.mastodon }}" class="text-dos-white"
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="icon icon-tabler icon-tabler-brand-mastodon"
+              width="28"
+              height="28"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path
+                d="M18.648 15.254c-1.816 1.763 -6.648 1.626 -6.648 1.626a18.262 18.262 0 0 1 -3.288 -.256c1.127 1.985 4.12 2.81 8.982 2.475c-1.945 2.013 -13.598 5.257 -13.668 -7.636l-.026 -1.154c0 -3.036 .023 -4.115 1.352 -5.633c1.671 -1.91 6.648 -1.666 6.648 -1.666s4.977 -.243 6.648 1.667c1.329 1.518 1.352 2.597 1.352 5.633s-.456 4.074 -1.352 4.944z"
+              ></path>
+              <path
+                d="M12 11.204v-2.926c0 -1.258 -.895 -2.278 -2 -2.278s-2 1.02 -2 2.278v4.722m4 -4.722c0 -1.258 .895 -2.278 2 -2.278s2 1.02 2 2.278v4.722"
+              ></path></svg
+          ></a>
+        </li>
+        {{ end }} {{ if isset .Params.socials "github" }}
+        <li>
+          <a href="{{ .Params.socials.github }}" class="text-dos-white"
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="icon icon-tabler icon-tabler-brand-github"
+              width="28"
+              height="28"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              stroke="currentColor"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path
+                d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"
+              ></path></svg
+          ></a>
+        </li>
+        {{ end }} {{ if isset .Params.socials "instagram" }}
+        <li>
+          <a href="{{ .Params.socials.instagram }}" class="text-dos-white"
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="icon icon-tabler icon-tabler-brand-instagram"
+              width="28"
+              height="28"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <rect x="4" y="4" width="16" height="16" rx="4"></rect>
+              <circle cx="12" cy="12" r="3"></circle>
+              <line x1="16.5" y1="7.5" x2="16.5" y2="7.501"></line></svg
+          ></a>
+        </li>
+        {{ end }} {{ if isset .Params.socials "discord" }}
+        <li class="text-dos-white" title="{{ .Params.socials.discord }}">
+          <svg
             xmlns="http://www.w3.org/2000/svg"
-            class="icon icon-tabler icon-tabler-brand-twitter"
+            class="icon icon-tabler icon-tabler-brand-discord"
             width="28"
             height="28"
             viewBox="0 0 24 24"
@@ -27,107 +114,26 @@
             stroke-linecap="round"
             stroke-linejoin="round"
           >
+            <circle cx="9" cy="12" r="1"></circle>
+            <circle cx="15" cy="12" r="1"></circle>
+            <path d="M7.5 7.5c3.5 -1 5.5 -1 9 0"></path>
+            <path d="M7 16.5c3.5 1 6.5 1 10 0"></path>
             <path
-              d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z"
-            ></path></svg
-        ></a>
-      </li>
-      {{ end }} {{ if isset .Params.socials "mastodon" }}
-      <li>
-        <a href="{{ .Params.socials.mastodon }}" class="text-dos-white"
-          ><svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="icon icon-tabler icon-tabler-brand-mastodon"
-            width="28"
-            height="28"
-            viewBox="0 0 24 24"
-            stroke-width="1.5"
-            stroke="currentColor"
-            fill="none"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <path
-              d="M18.648 15.254c-1.816 1.763 -6.648 1.626 -6.648 1.626a18.262 18.262 0 0 1 -3.288 -.256c1.127 1.985 4.12 2.81 8.982 2.475c-1.945 2.013 -13.598 5.257 -13.668 -7.636l-.026 -1.154c0 -3.036 .023 -4.115 1.352 -5.633c1.671 -1.91 6.648 -1.666 6.648 -1.666s4.977 -.243 6.648 1.667c1.329 1.518 1.352 2.597 1.352 5.633s-.456 4.074 -1.352 4.944z"
+              d="M15.5 17c0 1 1.5 3 2 3c1.5 0 2.833 -1.667 3.5 -3c.667 -1.667 .5 -5.833 -1.5 -11.5c-1.457 -1.015 -3 -1.34 -4.5 -1.5l-1 2.5"
             ></path>
             <path
-              d="M12 11.204v-2.926c0 -1.258 -.895 -2.278 -2 -2.278s-2 1.02 -2 2.278v4.722m4 -4.722c0 -1.258 .895 -2.278 2 -2.278s2 1.02 2 2.278v4.722"
-            ></path></svg
-        ></a>
-      </li>
-      {{ end }} {{ if isset .Params.socials "github" }}
-      <li>
-        <a href="{{ .Params.socials.github }}" class="text-dos-white"
-          ><svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="icon icon-tabler icon-tabler-brand-github"
-            width="28"
-            height="28"
-            viewBox="0 0 24 24"
-            stroke-width="2"
-            stroke="currentColor"
-            fill="none"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <path
-              d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"
-            ></path></svg
-        ></a>
-      </li>
-      {{ end }} {{ if isset .Params.socials "instagram" }}
-      <li>
-        <a href="{{ .Params.socials.instagram }}" class="text-dos-white"
-          ><svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="icon icon-tabler icon-tabler-brand-instagram"
-            width="28"
-            height="28"
-            viewBox="0 0 24 24"
-            stroke-width="1.5"
-            stroke="currentColor"
-            fill="none"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <rect x="4" y="4" width="16" height="16" rx="4"></rect>
-            <circle cx="12" cy="12" r="3"></circle>
-            <line x1="16.5" y1="7.5" x2="16.5" y2="7.501"></line></svg
-        ></a>
-      </li>
-      {{ end }} {{ if isset .Params.socials "discord" }}
-      <li class="text-dos-white" title="{{ .Params.socials.discord }}">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="icon icon-tabler icon-tabler-brand-discord"
-          width="28"
-          height="28"
-          viewBox="0 0 24 24"
-          stroke-width="1.5"
-          stroke="currentColor"
-          fill="none"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        >
-          <circle cx="9" cy="12" r="1"></circle>
-          <circle cx="15" cy="12" r="1"></circle>
-          <path d="M7.5 7.5c3.5 -1 5.5 -1 9 0"></path>
-          <path d="M7 16.5c3.5 1 6.5 1 10 0"></path>
-          <path
-            d="M15.5 17c0 1 1.5 3 2 3c1.5 0 2.833 -1.667 3.5 -3c.667 -1.667 .5 -5.833 -1.5 -11.5c-1.457 -1.015 -3 -1.34 -4.5 -1.5l-1 2.5"
-          ></path>
-          <path
-            d="M8.5 17c0 1 -1.356 3 -1.832 3c-1.429 0 -2.698 -1.667 -3.333 -3c-.635 -1.667 -.476 -5.833 1.428 -11.5c1.388 -1.015 2.782 -1.34 4.237 -1.5l1 2.5"
-          ></path>
-        </svg>
-      </li>
-      {{ end }}
-    </ul>
-  </div>
-  <div
-    class="bg-dos-white p-8 text-dos-black rounded-b-lg lg:rounded-none lg:rounded-r-lg"
-  >
-    {{ .Content }}
+              d="M8.5 17c0 1 -1.356 3 -1.832 3c-1.429 0 -2.698 -1.667 -3.333 -3c-.635 -1.667 -.476 -5.833 1.428 -11.5c1.388 -1.015 2.782 -1.34 4.237 -1.5l1 2.5"
+            ></path>
+          </svg>
+        </li>
+        {{ end }}
+      </ul>
+    </div>
+    <div
+      class="bg-dos-white p-8 text-dos-black rounded-b-lg{{ if eq $direction "horizontal" }} lg:rounded-none lg:rounded-r-lg{{ end }}"
+    >
+      {{ .Content }}
+    </div>
   </div>
 </div>
 {{ end }}

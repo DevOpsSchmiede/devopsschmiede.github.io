@@ -3,7 +3,7 @@
     <div class="flex flex-col md:flex-row">
       <ul>
         <li><a href="{{ .Site.BaseURL }}" class="active">Home</a></li>
-        <li><a href="{{ .Site.BaseURL }}/categories">Categories</a></li>
+        <li><a href="{{ .Site.BaseURL }}categories">Categories</a></li>
         <li><a href="#">About</a></li>
       </ul>
       <p id="logo" class="relative mx-auto order-first md:order-2">
@@ -123,7 +123,7 @@
         ></a>
       </p>
       <ul class="md:justify-end order-3">
-        <li><a href="#">Team</a></li>
+        <li><a href="{{ .Site.BaseURL }}team">Team</a></li>
         <li><a href="#">Imprint</a></li>
       </ul>
     </div>

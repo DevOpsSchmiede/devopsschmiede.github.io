@@ -1,16 +1,13 @@
 {{ define "main" }}
 <div class="container">
-  <h1
-    class="title text-dos-black mb-12 whitespace-nowrap text-2xl md:text-3xl lg:text-4xl h-16 pr-3 bg-dos-white inline-block font-bold relative border-b-4 border-dos-blue before:bg-dos-white before:h-16 before:absolute before:border-b-4 before:border-dos-blue before:w-full before:right-full"
-  >
-    {{ .Title }}
-  </h1>
-  <figure class="glass rounded-lg shadow-lg lg:mx-16 mb-12">
+  {{ partial "title.html" (dict "content" .Title) }}
+  <figure class="glass p-8 rounded-lg shadow-lg lg:mx-16 mb-12">
     <img src="{{ .Permalink }}{{ .Resources.GetMatch "images/banner*" }}"
     class="rounded-lg shadow-xl" />
   </figure>
   {{ partial "article/tags.html" .Params.Tags }}
   <div class="article-content mb-12">{{ .Content }}</div>
-  {{ partial "article/author.html" (dict "context" . "name" .Params.author) }}
+  {{ partial "article/author.html" (dict "context" . "name" .Params.author
+  "direction" "horizontal") }}
 </div>
 {{ end }}
