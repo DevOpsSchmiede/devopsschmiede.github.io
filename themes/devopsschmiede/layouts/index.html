@@ -2,16 +2,16 @@
 <div id="latest-article" class="container mb-12">
   {{ range first 1 (where .Site.RegularPages "Type" "posts") }}
   <h1
-    class="title mb-8 whitespace-nowrap text-2xl md:text-3xl lg:text-4xl h-16 pr-3 bg-dos-white inline-block font-bold relative border-b-4 border-dos-blue before:bg-dos-white before:h-16 before:absolute before:border-b-4 before:border-dos-blue before:w-screen before:right-full"
+    class="title mb-8 whitespace-nowrap text-xl z-10 md:text-3xl lg:text-4xl h-16 pr-3 bg-dos-white inline-block font-bold relative border-b-4 border-dos-blue before:bg-dos-white before:h-16 before:absolute before:border-b-4 before:border-dos-blue before:w-screen before:right-full"
   >
     <a href="{{ .Permalink }}" class="text-dos-black block">{{ .Title }}</a>
   </h1>
-  <figure
-    class="glass p-8 mb-8 rounded-lg shadow-xl lg:mr-16 lg:ml-12 lg:-mt-10 lg:-rotate-6 lg:float-right lg:w-3/6"
-  >
-    <img src="{{ .Permalink }}{{ .Resources.GetMatch "images/banner*" }}"
-    class="rounded-lg shadow-xl w-full" />
-  </figure>
+  <div class="lg:-rotate-6 lg:float-right lg:mr-16 lg:ml-12 lg:-mt-12 lg:w-3/6">
+    <figure class="tilt glass p-8 mb-8 rounded-lg shadow-xl">
+      <img src="{{ .Permalink }}{{ .Resources.GetMatch "images/banner*" }}"
+      class="rounded-lg shadow-xl w-full" />
+    </figure>
+  </div>
   <p class="mb-8 text-justify">{{ .Summary }}</p>
   {{ partial "article/badges.html" (dict "context" .) }} {{ end }}
 </div>

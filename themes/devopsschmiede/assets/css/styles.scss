@@ -59,7 +59,7 @@ nav {
 #logo {
   &::before,
   &::after {
-    @apply hidden md:block w-5 h-5 absolute z-20 bottom-0 rounded-full -mb-1;
+    @apply block w-5 h-5 absolute z-20 bottom-0 rounded-full -mb-1;
     content: "";
   }
 
@@ -115,8 +115,99 @@ nav {
     @apply inline-block border-b-4 border-dos-blue drop-shadow-lg text-3xl mb-8 mt-12;
   }
 
+  h3,
+  h4 {
+    @apply text-2xl my-8;
+  }
+
+  h4 {
+    @apply text-xl;
+  }
+
   p {
     @apply text-justify mb-8;
+  }
+
+  p code,
+  > pre code {
+    @apply bg-dos-black inline-block px-2;
+  }
+
+  > pre {
+    @apply mb-8;
+
+    code {
+      @apply p-4 block;
+    }
+  }
+
+  .highlight {
+    @apply mb-8;
+
+    td pre {
+      @apply p-2;
+    }
+  }
+
+  hr {
+    @apply m-8;
+  }
+
+  blockquote {
+    @apply ml-2 py-2 px-4 mb-8 border-l-2 border-dos-pink;
+
+    p:last-child {
+      @apply mb-0;
+    }
+  }
+
+  ul {
+    @apply list-disc px-8 mb-8;
+
+    ul,
+    ol {
+      @apply mb-0;
+    }
+  }
+
+  ol {
+    @apply list-decimal px-8 mb-8;
+
+    ol,
+    ul {
+      @apply mb-0;
+    }
+  }
+
+  li p {
+    @apply mb-0;
+  }
+
+  table {
+    @apply mx-auto mb-8;
+
+    td,
+    th {
+      @apply py-2 px-4;
+    }
+
+    thead th {
+      @apply bg-dos-white text-dos-black font-bold text-left;
+    }
+
+    tbody tr {
+      &:nth-child(even) {
+        @apply bg-dos-white bg-opacity-10;
+      }
+
+      &:hover {
+        @apply bg-dos-pink;
+      }
+    }
+  }
+
+  img {
+    @apply w-3/4 mx-auto;
   }
 }
 

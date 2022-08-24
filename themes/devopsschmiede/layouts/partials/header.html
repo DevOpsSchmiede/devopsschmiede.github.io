@@ -1,7 +1,7 @@
-<nav class="bg-dos-white sticky md:h-12 pb-4 md:pb-0">
+<nav class="bg-dos-white h-12">
   <div class="container">
     <div class="flex flex-col md:flex-row">
-      <ul>
+      <ul class="hidden md:flex">
         <li><a href="{{ "/" | relLangURL }}"{{ if or (eq .RelPermalink "/") (eq .RelPermalink "/en/") (eq .RelPermalink "/de/") (in .RelPermalink "/posts") }} class="active"{{ end }}>{{ i18n "home" }}</a></li>
         <li><a href="{{ "/categories/" | relLangURL }}"{{ if in .RelPermalink "/categories" }} class="active"{{ end }}>{{ i18n "categories" }}</a></li>
         <li><a href="{{ "/about/" | relLangURL }}"{{ if in .RelPermalink "/about" }} class="active"{{ end }}>{{ i18n "about" }}</a></li>
@@ -122,7 +122,7 @@
               </g></svg></span
         ></a>
       </p>
-      <ul class="md:justify-end order-3">
+      <ul class="hidden md:flex md:justify-end order-3">
         <li><a href="{{ "/team/" | relLangURL }}"{{ if in .RelPermalink "/team" }} class="active"{{ end }}>{{ i18n "team" }}</a></li>
         <li><a href="{{ "/imprint/" | relLangURL }}"{{ if in .RelPermalink "/imprint" }} class="active"{{ end }}>{{ i18n "imprint" }}</a></li>
       </ul>

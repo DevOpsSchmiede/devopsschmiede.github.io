@@ -1,9 +1,9 @@
 {{ define "main" }}
 <div class="container">
   {{ partial "title.html" (dict "content" (i18n "categories"))}}
-  <ul class="mb-24">
+  <ul class="mb-24 flex flex-row flex-wrap gap-4">
     {{ range $index, $taxonomy := .Site.Taxonomies.categories.Alphabetical }}
-    <li><a href="{{ "/categories/" | relLangURL }}{{ $taxonomy.Name | urlize }}" class="shadow-lg"><span class="glass px-2 py-1 rounded-l-lg text-dos-white">{{ $taxonomy.Name }}</span><span class="bg-dos-white px-2 py-1 rounded-r-lg text-bold text-dos-black">{{ .Count }}</span></a></li>
+    <li><a href="{{ "/categories/" | relLangURL }}{{ $taxonomy.Name | urlize }}" class="shadow-lg flex flex-row"><span class="glass px-2 py-1 rounded-l-lg text-dos-white">{{ $taxonomy.Name }}</span><span class="bg-dos-white px-2 py-1 rounded-r-lg text-bold text-dos-black">{{ .Count }}</span></a></li>
     {{ end }}
   </ul>
   {{ if gt (len (where .Pages "Params.categories" .Title)) 0 }}

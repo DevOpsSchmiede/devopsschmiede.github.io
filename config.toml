@@ -26,6 +26,13 @@ lineanchors = "L"
 style = "dracula"
 
 [module]
-[module.mounts]
+[[module.mounts]]
 source = "./node_modules/@fontsource/saira/files"
 target = "static/css/files"
+[[module.mounts]]
+source = "./node_modules/vanilla-tilt/dist"
+target = "static/js/files"
+includeFiles = ["vanilla-tilt.min.js"]
+
+[outputs]
+home = ["HTML", "RSS", "JSON"]

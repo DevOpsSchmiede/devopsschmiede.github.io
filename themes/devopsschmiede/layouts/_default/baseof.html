@@ -3,23 +3,95 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="{{ .Description }}" />
+    <meta name="description" content="{{ .Params.summary }}" />
     <link rel="canonical" href="{{ .Permalink }}" />
     <meta name="referrer" content="no-referrer" />
     <meta name="robots" content="index, follow" />
-    {{/*
-    <base href="{{ .Site.BaseURL }}" />
-    */}}
     <title>
       {{ if not .IsHome }}{{ .Page.Title }} - {{ end }}{{ .Site.Title }}
     </title>
     {{ partialCached "css.html" . }}
+    <script type="text/javascript" src="/js/files/vanilla-tilt.min.js"></script>
+    <script type="text/javascript">
+      window.addEventListener("load", (event) => {
+        let searchIndex = [];
+        fetch("/index.json")
+          .then((response) => response.json())
+          .then((response) => (searchIndex = response));
+
+        const searchResults = document.getElementById("search-results");
+        const searchResultsEntryTemplate = document.getElementById(
+          "search-results-entry-template"
+        );
+        const elements = document.querySelectorAll(".tilt");
+        VanillaTilt.init(elements);
+
+        document.querySelectorAll(".small-article").forEach((article) => {
+          article.addEventListener("click", () => {
+            article.querySelector("h1 a").click();
+          });
+        });
+
+        const newSearchResultEntry = (href, title, summary) => {
+          let entry = searchResultsEntryTemplate.cloneNode(true);
+          entry.removeAttribute("id");
+          entry.classList.remove("hidden");
+
+          entry.firstChild.setAttribute("href", href);
+          const spans = entry.getElementsByTagName("span");
+          spans[0].textContent = title;
+          spans[1].textContent = summary;
+
+          return entry;
+        };
+
+        document.querySelector("#search")?.addEventListener("input", (e) => {
+          const v = e.target.value.toLowerCase();
+          let results = searchIndex.filter(
+            (article) =>
+              article.title.toLowerCase().includes(v) ||
+              article.summary.toLowerCase().includes(v)
+          );
+
+          const lis = searchResults.querySelectorAll(
+            "li:not(#search-results-entry-template)"
+          );
+          lis.forEach((li) => {
+            searchResults.removeChild(li);
+          });
+
+          searchResults.style.display =
+            results.length > 0 && v.length != "" ? "block" : "none";
+
+          results.forEach((article) => {
+            searchResults.appendChild(
+              newSearchResultEntry(article.href, article.title, article.summary)
+            );
+          });
+        });
+      });
+    </script>
   </head>
   <body>
     <div class="flex flex-col min-h-screen">
       <main
         class="relative before:block before:absolute before:z-0 before:top-0 before:left-0 before:right-0 before:h-96"
       >
+        <span
+          class="absolute block glass rounded-lg shadow-lg opacity-20 w-24 h-24 top-60 right-[13%] rotate-[15deg]"
+        ></span>
+        <span
+          class="absolute block glass rounded-lg shadow-lg opacity-20 w-10 h-10 top-[34rem] right-[30%] rotate-[60deg]"
+        ></span>
+        <span
+          class="absolute block glass rounded-lg shadow-lg opacity-20 w-16 h-16 top-96 left-[40%] rotate-[20deg]"
+        ></span>
+        <span
+          class="absolute block glass rounded-lg shadow-lg opacity-20 w-52 h-52 top-[35rem] left-[30%] rotate-[12deg]"
+        ></span>
+        <span
+          class="absolute block glass rounded-lg shadow-lg opacity-20 w-32 h-32 top-80 left-[10%] rotate-[35deg]"
+        ></span>
         <div class="relative z-10">
           {{- partial "header.html" . -}}
           <div class="py-24">{{- block "main" . }}{{- end }}</div>

@@ -1,6 +1,6 @@
 <div class="bg-dos-white py-6 text-dos-black mb-24">
   <div class="container flex flex-row gap-12">
-    <div class="my-auto grow">
+    <div class="my-auto grow relative">
       <div class="w-3/4 mx-auto">
         <span class="text-dos-grey absolute z-0 mt-1 ml-2"
           ><svg
@@ -20,9 +20,14 @@
         ></span>
         <input
           type="search"
+          id="search"
+          autocomplete="off"
           placeholder="search for something"
           class="py-1 pl-10 pr-2 relative z-10 w-full bg-transparent border-b-2 border-dos-pink focus:outline-none placeholder:text-dos-grey"
         />
+        <ul class="absolute top-full w-full bg-dos-white p-4 pb-2 shadow-lg rounded-lg z-10 hidden max-h-[32rem] overflow-y-auto" id="search-results">
+          <li class="mb-2 hidden" id="search-results-entry-template"><a href="#" class="rounded-lg p-2 block hover:bg-dos-grey hover:bg-opacity-25"><span></span><span class="block text-dos-black text-sm"></span></a></li>
+        </ul>
       </div>
     </div>
     <div class="text-2xl grow">

@@ -1,7 +1,7 @@
 {{ define "main" }}
 <div class="container">
   {{ partial "title.html" (dict "content" .Title) }}
-  <figure class="glass p-8 rounded-lg shadow-lg lg:mx-16 mb-12">
+  <figure class="tilt glass p-8 rounded-lg shadow-lg lg:mx-16 mb-12">
     <img src="{{ .Permalink }}{{ .Resources.GetMatch "images/banner*" }}"
     class="rounded-lg shadow-xl" />
   </figure>
