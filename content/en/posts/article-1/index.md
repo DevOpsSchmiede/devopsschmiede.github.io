@@ -2,7 +2,9 @@
 title: "A great article about this blog and a long title too"
 date: "2022-08-05 20:34:48 +0200"
 draft: true
-author: Fabian
+authors:
+  - Fabian
+  - Lionel
 foo: bar
 categories: something
 tags:

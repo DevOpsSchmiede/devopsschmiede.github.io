@@ -1,6 +1,6 @@
 {{ $direction := .direction }} {{ with .context.Site.GetPage (printf "/team/%s"
 (lower .name)) }}
-<div class="{{ if eq $direction "vertical" }}w-1/2{{ end }}">
+<div class="{{ if eq $direction "vertical" }}lg:w-1/2{{ end }}">
   <div class="shadow-lg flex flex-col{{ if eq $direction "horizontal"}} mt-24 lg:flex-row lg:mx-16{{ end }}">
     <div class="glass p-8 rounded-t-lg text-center{{ if eq $direction "horizontal" }} lg:rounded-none lg:rounded-l-lg{{ end }}">
       {{ $picture := .Resources.GetMatch "picture*" }}
