@@ -6,6 +6,6 @@ authors:
   - xxx
 categories: xxx
 tags:
-  - ...
+  - xxx
 summary: xxx
 ---

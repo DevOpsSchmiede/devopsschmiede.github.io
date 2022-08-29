@@ -2,7 +2,6 @@ baseURL = "https://devops-schmiede.de/"
 languageCode = "en-us"
 title = "DevOps Schmiede"
 theme = "devopsschmiede"
-description = "DevOps Schmiede"
 defaultContentLanguage = "en"
 
 [languages]
@@ -10,10 +9,12 @@ defaultContentLanguage = "en"
 contentDir = "content/en"
 languageName = "English"
 weight = 1
+description = "The DevOps Schmiede is ..."
 [languages.de]
 contentDir = "content/de"
 languageName = "Deutsch"
 weight = 2
+description = "Die DevOps Schmiede ist ..."
 
 [taxanomies]
 tag = "tags"

@@ -3,7 +3,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="{{ .Params.summary }}" />
+    <meta
+      name="description"
+      content="{{ .Params.summary | default .Site.Params.Description }}"
+    />
     <link rel="canonical" href="{{ .Permalink }}" />
     <meta name="referrer" content="no-referrer" />
     <meta name="robots" content="index, follow" />
@@ -93,6 +96,7 @@
           class="absolute block glass rounded-lg shadow-lg opacity-20 w-32 h-32 top-80 left-[10%] rotate-[35deg]"
         ></span>
         <div class="relative z-10">
+          </ul>
           {{- partial "header.html" . -}}
           <div class="py-24">{{- block "main" . }}{{- end }}</div>
         </div>
