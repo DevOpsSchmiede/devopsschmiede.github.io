@@ -16,10 +16,10 @@
       >
         {{ .Params.name }} "{{ .Params.nickname }}"
       </h1>
-      <ul class="flex flex-row justify-center gap-1">
+      <ul class="flex flex-row justify-center gap-1 h-7">
         {{ if isset .Params.socials "twitter" }}
         <li>
-          <a href="{{ .Params.socials.twitter }}" class="text-dos-white"
+          <a href="{{ .Params.socials.twitter }}" class="text-dos-white relative block transition-all hover:-mt-0.5"
             ><svg
               xmlns="http://www.w3.org/2000/svg"
               class="icon icon-tabler icon-tabler-brand-twitter"
@@ -39,7 +39,7 @@
         </li>
         {{ end }} {{ if isset .Params.socials "mastodon" }}
         <li>
-          <a href="{{ .Params.socials.mastodon }}" class="text-dos-white"
+          <a href="{{ .Params.socials.mastodon }}" class="text-dos-white relative block transition-all hover:-mt-0.5"
             ><svg
               xmlns="http://www.w3.org/2000/svg"
               class="icon icon-tabler icon-tabler-brand-mastodon"
@@ -62,7 +62,7 @@
         </li>
         {{ end }} {{ if isset .Params.socials "github" }}
         <li>
-          <a href="{{ .Params.socials.github }}" class="text-dos-white"
+          <a href="{{ .Params.socials.github }}" class="text-dos-white relative block transition-all hover:-mt-0.5"
             ><svg
               xmlns="http://www.w3.org/2000/svg"
               class="icon icon-tabler icon-tabler-brand-github"
@@ -82,7 +82,7 @@
         </li>
         {{ end }} {{ if isset .Params.socials "instagram" }}
         <li>
-          <a href="{{ .Params.socials.instagram }}" class="text-dos-white"
+          <a href="{{ .Params.socials.instagram }}" class="text-dos-white relative block transition-all hover:-mt-0.5"
             ><svg
               xmlns="http://www.w3.org/2000/svg"
               class="icon icon-tabler icon-tabler-brand-instagram"
@@ -101,7 +101,7 @@
           ></a>
         </li>
         {{ end }} {{ if isset .Params.socials "discord" }}
-        <li class="text-dos-white" title="{{ .Params.socials.discord }}">
+        <li class="text-dos-white relative block transition-all hover:-mt-0.5" title="{{ .Params.socials.discord }}">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="icon icon-tabler icon-tabler-brand-discord"
