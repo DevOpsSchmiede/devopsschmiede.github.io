@@ -25,6 +25,8 @@ linenos = true
 anchorLineNos = true
 lineanchors = "L"
 style = "dracula"
+[markup.goldmark.renderer]
+unsafe = true
 
 [module]
 [[module.mounts]]

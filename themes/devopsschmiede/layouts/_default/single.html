@@ -1,3 +1,6 @@
 {{ define "main" }}
-<div class="container">{{ partial "title.html" (dict "content" .Title) }}</div>
+<div class="container">
+  {{ partial "title.html" (dict "content" .Title) }}
+  <div class="content">{{.Content}}</div>
+</div>
 {{ end }}
