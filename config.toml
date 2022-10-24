@@ -1,4 +1,4 @@
-baseURL = "https://devops-schmiede.de/"
+baseURL = "https://devopsschmiede.github.io/devops-schmiede.de/"
 languageCode = "en-us"
 title = "DevOps Schmiede"
 theme = "devopsschmiede"
