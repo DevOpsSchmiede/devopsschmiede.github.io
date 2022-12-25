@@ -24,10 +24,20 @@
     <script type="text/javascript" src="/js/files/vanilla-tilt.min.js"></script>
     <script type="text/javascript">
       window.addEventListener("load", (event) => {
-        search();
-      });
+        const elements = document.querySelectorAll(".tilt");
+        console.log(elements.length)
+        VanillaTilt.init(elements);
 
-      function search() {
+        document.querySelectorAll(".small-article").forEach((article) => {
+          article.addEventListener("click", () => {
+            article.querySelector("h1 a").click();
+          });
+        });
+
+        search();
+    });
+
+    function search() {
         const searchResults = document.getElementById("search-results");
 
         if(!searchResults) return
@@ -40,14 +50,6 @@
         const searchResultsEntryTemplate = document.getElementById(
           "search-results-entry-template"
         );
-        const elements = document.querySelectorAll(".tilt");
-        VanillaTilt.init(elements);
-
-        document.querySelectorAll(".small-article").forEach((article) => {
-          article.addEventListener("click", () => {
-            article.querySelector("h1 a").click();
-          });
-        });
 
         const newSearchResultEntry = (href, title, summary) => {
           let entry = searchResultsEntryTemplate.cloneNode(true);

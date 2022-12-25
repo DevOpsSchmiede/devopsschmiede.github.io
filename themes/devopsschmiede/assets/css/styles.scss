@@ -16,6 +16,11 @@ p {
   @apply leading-7 text-justify;
 }
 
+a:active,
+a:focus {
+  outline: unset;
+}
+
 main {
   @apply text-dos-white;
 

@@ -7,8 +7,8 @@
       {{ if $picture }}
       <figure class="mb-8{{ if eq $direction "horizontal" }} lg:w-80{{ end }}">
         <img src="{{ .Permalink }}{{ $picture }}"
-        alt="Author picture of {{ .Params.name }}" class="tilt rounded-full
-        w-[9.375rem] mx-auto shadow-lg" />
+        alt="Author picture of {{ .Params.name }}" class="tilt rounded-lg
+        w-[9.375rem] mx-auto shadow-xl" />
       </figure>
       {{ end }}
       <h1
