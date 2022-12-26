@@ -117,20 +117,24 @@ nav {
 
 .content {
   h2 {
-    @apply inline-block border-b-4 border-dos-blue drop-shadow-lg text-3xl mb-8 mt-12;
+    @apply inline-block border-b-4 border-dos-blue drop-shadow-lg text-3xl mb-6 mt-12;
   }
 
   h3,
   h4 {
-    @apply text-2xl my-8;
+    @apply text-2xl mb-6 mt-8;
   }
 
   h4 {
-    @apply text-xl;
+    @apply text-xl my-4;
+  }
+
+  h5 {
+    @apply text-lg my-4;
   }
 
   p {
-    @apply text-justify mb-8;
+    @apply text-justify mb-6;
   }
 
   p code,
@@ -139,7 +143,7 @@ nav {
   }
 
   > pre {
-    @apply mb-8;
+    @apply mb-6;
 
     code {
       @apply p-4 block;
@@ -147,7 +151,7 @@ nav {
   }
 
   .highlight {
-    @apply mb-8;
+    @apply mb-6 overflow-auto;
 
     td pre {
       @apply p-2;
@@ -155,11 +159,11 @@ nav {
   }
 
   hr {
-    @apply m-8;
+    @apply m-6;
   }
 
   blockquote {
-    @apply ml-2 py-2 px-4 mb-8 border-l-2 border-dos-pink;
+    @apply ml-2 py-2 px-4 mb-6 border-l-2 border-dos-pink;
 
     p:last-child {
       @apply mb-0;
@@ -167,7 +171,7 @@ nav {
   }
 
   ul {
-    @apply list-disc px-8 mb-8;
+    @apply list-disc px-8 mb-6;
 
     ul,
     ol {
@@ -176,7 +180,7 @@ nav {
   }
 
   ol {
-    @apply list-decimal px-8 mb-8;
+    @apply list-decimal px-8 mb-6;
 
     ol,
     ul {
@@ -189,7 +193,7 @@ nav {
   }
 
   table {
-    @apply mx-auto mb-8;
+    @apply mx-auto mb-6;
 
     td,
     th {
@@ -212,7 +216,7 @@ nav {
   }
 
   img {
-    @apply w-3/4 mx-auto;
+    @apply max-w-3xl mx-auto;
   }
 }
 

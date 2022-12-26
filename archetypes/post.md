@@ -10,5 +10,5 @@ categories:
 tags:
   - xxx
 summary: xxx
-unsplash_link: https://unsplash.com/photos/ZV_64LdGoao # remove if banner isn't from unsplash
+unsplash_link: # remove if banner isn't from unsplash
 ---

@@ -14,7 +14,7 @@
     <meta property="og:title" content="{{ .Params.summary }}" />
     <meta property="og:section" content="{{ index .Params.categories 0 }}" />
     <meta property="og:type" content="article" />
-    <meta property="og:image" content="{{ .Permalink }}{{ .Resources.GetMatch "images/banner*" }}" />
+    <meta property="og:image" content="{{ .Permalink }}{{ .Resources.GetMatch "images/banner.*" }}" />
     <meta property="og:url" content="{{ .Permalink }}" />
     {{ end }}
     <title>
