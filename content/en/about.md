@@ -3,10 +3,10 @@ draft: false
 title: About
 ---
 
-The DevOps Schmiede (in english: DevOps Forge) is a Blog about all things DevOps (https://about.gitlab.com/topics/devops/). On this site BaldFabi and LearningEntity will publish articles about IT infrastructure management, CI/CD and coding.
+The DevOps Schmiede (in english: DevOps Forge) is a Blog about all things [DevOps](https://about.gitlab.com/topics/devops/). Launched on 2022, this Blog contains blog posts and articles about software development and infrastructure management.
 
-If you want to discuss our articles or ask questions, you can join our discord server.
+Our aim is to provide valuable insights to professionals and enthusiasts alike, helping them to achieve their goals.
 
-Our aim is to convey knowledge to our audience. We guarantee to operate this blog independently and without any fees for our readers.
+Whether you're just starting out or already have years of experience in DevOps, our blog is a go-to destination for staying informed, connected and inspired. Join our community and be a part of the conversation!
 
-Although we try our best, we cant guarantee currectness of our blog articles.
+Although we try our best, we cant guarantee correctness of our blog articles.
