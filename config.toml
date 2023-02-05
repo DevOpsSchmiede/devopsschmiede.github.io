@@ -36,6 +36,9 @@ target = "static/css/files"
 source = "./node_modules/vanilla-tilt/dist"
 target = "static/js/files"
 includeFiles = ["vanilla-tilt.min.js"]
+[[module.mounts]]
+source = "./themes/devopsschmiede/assets/images/"
+target = "static/images"
 
 [outputs]
 home = ["HTML", "RSS", "JSON"]
