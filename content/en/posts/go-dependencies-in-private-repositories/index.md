@@ -10,7 +10,7 @@ tags:
   - go
   - git
   - repositories
-summary: Have you ever thought about to store some of your code in private repository and use it as dependencies? You may noticed that doesn’t work out of the box. In this article we will describe how you can achieve this.
+summary: Have you ever thought about to store some of your code in private repository and use it as dependencies? You may noticed that this doesn’t work out of the box. In this article we will describe how you can achieve this.
 ---
 
 As described in the teaser I recently asked myself how to do this because I wanted to store some middlewares for [Gin Gonic](https://gin-gonic.com/) centrally at work. It would have been possible to store them publicly because they don’t contain any company secrets. But some parts are some kind of specific regarding HTTP headers.
