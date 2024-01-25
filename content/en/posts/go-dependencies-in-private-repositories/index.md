@@ -23,17 +23,17 @@ I assume that you add dependencies to your project using the `go get` command. I
 
 # Configure Go+Git to use private repositories
 
-To use private repositories you always have to tell Go which domains or specifically repositories are private. To do this the `GOPRIVATE` env variable. It can be set individually per terminal or centrally in your dotfiles (`.bashrc`, `.zshrc`, etc.). This is independent from the protocol you use with git.
+To use private repositories you always have to tell Go which domains or specifically repositories are private. To do this the `GOPRIVATE` env variable has to be defined. It can be set individually per terminal or centrally in your dotfiles (`.bashrc`, `.zshrc`, etc.). This is independent from the protocol you use with git.
 
-The value of the `GOPRIVATE` repository can look like this.
+The value of the `GOPRIVATE` variable can look like this.
 
 ```bash
 export GOPRIVATE=github.com/BaldFabi/someprivaterepo,git.company.com
 ```
 
-As you can see you can define a specific repository or a domain if a Git server instance is completly private.
+As you can see you can define a specific repository or domain if a Git server instance is entirely private.
 
-Additionally to the env variable you have to add some kind of authentication because Go+Git won’t ask you for credentials while fetching dependencies.
+Additionally to the env variable you have to provide some kind of credentials because Go+Git won’t ask you for some while fetching dependencies.
 
 ## HTTP
 
@@ -59,8 +59,8 @@ Instead of the `~/.netrc` file you have to add some lines to `~/.gitconfig`. You
 	insteadOf = https://github.com/BaldFabi/someprivaterepo
 ```
 
-As you may see git just makes a string replace and you can be specifically or generally regarding the domain.
+As you may see git just makes a simple string replace and you can be specifically in case of a repository or generally regarding the domain.
 
 # Conclusion
 
-To use private repositories as dependencies in Go is possible but you need to configure multiple things. It’s cumbersome and I personally hope that in the future that we have more direct control over Go instead of a mix between Go and git.
+To use private repositories as dependencies in Go is possible but you need to configure multiple things. It’s cumbersome and I personally hope that in the future we have more direct control over Go instead of a mix between Go and git.
